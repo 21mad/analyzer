@@ -1,0 +1,87 @@
+:root {
+  /*--C-PRIMARY: #018AD2;*/
+  --C-PRIMARY: #096bde;
+  --C-BLUE: #096bde; /*#018ad2;*/
+  --C-BLUE2: #096bde; /*#04a2f4;*/
+  --C-SECONDARY: #3cc9bc;
+  --C-BLACK: #3e3e41;
+  --C-RED: #ed4848;
+  --C-RED2: #d32f2f;
+  --C-LIGHT-YELLOW: #ffefd0;
+  --C-WHITE: #ffffff;
+  --C-WHITE1: #f5f8f7;
+  --C-WHITE2: #f6fcff;
+  --C-WHITE3: #eefaff;
+  --C-WHITE4: #fcfcfc;
+  --C-WHITE5: #ecf7ff;
+  --C-LIGHT-BLUE: #d9f4ff;
+  --C-LIGHT-BLUE2: #cfe4f1;
+  --C-LIGHT-GREY: #e0e0e0;
+  --C-LIGHT-GREY2: #cbcbcb;
+  --C-LIGHT-GREY3: #f4f4f4;
+  --C-LIGHT-GREY4: #ebebeb;
+  --C-LIGHT-GREY5: #dbdbdb;
+  --C-GREY: #9fa5ad;
+  --C-DARK-GREY: #a0a0a0;
+  --C-DARK-GREY2: #8e8e8e;
+  --C-DARK-GREY3: #666666;
+}
+
+body,
+.storybook-root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;*/
+  /*font-family: 'Segoe Script', sans-serif;*/
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--C-BLACK);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.textUI {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.textMono {
+  font-family: 'Ubuntu', sans-serif !important;
+  /*font-family: 'Ubuntu Mono', sans-serif !important;*/
+  /*letter-spacing: -1px;*/
+  /*font-weight: 300;*/
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+svg {
+  flex-basis: auto !important;
+  min-width: 0 !important;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #ebebeb white;
+}
+
+/* для Chrome/Edge/Safari */
+body ::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+
+body ::-webkit-scrollbar-thumb {
+  background-color: #ebebeb;
+  border-radius: 5px;
+  border: 3px solid white;
+}
