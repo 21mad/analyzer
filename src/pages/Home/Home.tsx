@@ -6,8 +6,8 @@ export function Home() {
   const navigate = useNavigate();
   return (
     <div className="home">
-      <Typography variant="h2" className="title">
-        Welcome to Todoist Analyzer
+      <Typography variant="h2" className="hero-title">
+        Welcome to <b>Todoist Analyzer</b>
       </Typography>
       <Button
         variant="contained"

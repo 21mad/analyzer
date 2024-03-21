@@ -1,0 +1,18 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30vh;
+  height: 100%;
+}
+
+.hero-title {
+  text-align: center;
+  padding-bottom: 16px;
+  user-select: none;
+}
+
+.get-started {
+  background-color: var(--pakistan-green) !important;
+  text-transform: none !important;
+}

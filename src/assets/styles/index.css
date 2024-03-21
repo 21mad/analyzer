@@ -1,34 +1,21 @@
 :root {
-  /* --C-PRIMARY: #018AD2; */
-  --C-PRIMARY: #096bde;
-  --C-BLUE: #096bde; /*#018ad2;*/
-  --C-BLUE2: #096bde; /*#04a2f4;*/
-  --C-SECONDARY: #3cc9bc;
-  --C-BLACK: #3e3e41;
-  --C-RED: #ed4848;
-  --C-RED2: #d32f2f;
-  --C-LIGHT-YELLOW: #ffefd0;
+  --dark-moss-green: #606c38ff;
+  --pakistan-green: #283618ff;
+  --cornsilk: #fefae0ff;
+  --earth-yellow: #dda15eff;
+  --tigers-eye: #bc6c25ff;
+  --bg-gray: #efefef;
+  --C-BLACK: #000000;
+  --C-GREEN: #00ff00;
+  --C-RED: #ff0000;
   --C-WHITE: #ffffff;
-  --C-WHITE1: #f5f8f7;
-  --C-WHITE2: #f6fcff;
-  --C-WHITE3: #eefaff;
-  --C-WHITE4: #fcfcfc;
-  --C-WHITE5: #ecf7ff;
-  --C-LIGHT-BLUE: #d9f4ff;
-  --C-LIGHT-BLUE2: #cfe4f1;
-  --C-LIGHT-GREY: #e0e0e0;
-  --C-LIGHT-GREY2: #cbcbcb;
-  --C-LIGHT-GREY3: #f4f4f4;
-  --C-LIGHT-GREY4: #ebebeb;
-  --C-LIGHT-GREY5: #dbdbdb;
-  --C-GREY: #9fa5ad;
-  --C-DARK-GREY: #a0a0a0;
-  --C-DARK-GREY2: #8e8e8e;
-  --C-DARK-GREY3: #666666;
 }
 
-body,
-.storybook-root {
+.fontFill {
+  font-variation-settings: 'FILL' 1;
+}
+
+body {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -40,6 +27,8 @@ body,
   color: var(--C-BLACK);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: thin;
+  scrollbar-color: #ebebeb white;
 }
 
 .textUI {
@@ -67,11 +56,6 @@ html {
 svg {
   flex-basis: auto !important;
   min-width: 0 !important;
-}
-
-body {
-  scrollbar-width: thin;
-  scrollbar-color: #ebebeb white;
 }
 
 /* для Chrome/Edge/Safari */

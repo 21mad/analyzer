@@ -1,0 +1,28 @@
+.card {
+  background-color: white;
+  border-radius: 14px;
+  padding: 16px;
+  /* margin-bottom: 10px; */
+  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.card.with-action:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-small {
+  width: 160px;
+  height: 80px;
+}
+
+.card-big {
+  width: 360px;
+  height: 200px;
+  
+}
+
+.card-title {
+  padding-bottom: 10px;
+  font-weight: 500 !important;
+}
