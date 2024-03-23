@@ -6,9 +6,17 @@ import { Card } from "../../components/common/Card/Card.tsx";
 
 export function AppPage() {
   const navigate = useNavigate();
-  const testCards = Array(31)
+  const testCards = Array(3)
     .fill(0)
-    .map((_, i) => <Card key={i} title={"Card " + i} onClick={(() => {navigate("#" + i)})} />);
+    .map((_, i) => (
+      <Card
+        key={i}
+        title={"Card " + i}
+        onClick={() => {
+          navigate("#" + i);
+        }}
+      />
+    ));
   return (
     <div className="app-page">
       <AppBar />
@@ -47,13 +55,17 @@ export function AppPage() {
               <Typography variant="h4">2%</Typography>
             </Card>
             <Card
-              title="Chrun rate"
-              size="big"
-              onClick={() => navigate("#churn-rate")}
+              title="Sales"
+              size="medium"
+              onClick={() => navigate("#sales")}
             >
+              <Typography variant="h4">One column card</Typography>
+            </Card>
+            <Card title="Trend" size="big" onClick={() => navigate("#trend")}>
               <Typography variant="h4">2%</Typography>
             </Card>
-            {testCards}
+            <div className="cards-container-1">{testCards}</div>
+            {/* {testCards} */}
           </div>
         </div>
       </div>

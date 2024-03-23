@@ -4,7 +4,7 @@ import "./Card.css";
 export interface CardProps {
   title?: string;
   children?: React.ReactNode;
-  size?: "small" | "big";
+  size?: "small" | "medium" | "big";
   style?: React.CSSProperties;
   onClick?: () => void;
 }

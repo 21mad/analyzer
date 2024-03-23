@@ -2,8 +2,6 @@
   background-color: white;
   border-radius: 14px;
   padding: 16px;
-  /* margin-bottom: 10px; */
-  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); */
 }
 
 .card.with-action:hover {
@@ -12,17 +10,27 @@
 }
 
 .card-small {
-  width: 160px;
-  height: 80px;
+  width: var(--card-width);
+  height: var(--card-height);
+}
+
+.card-medium {
+  width: calc(var(--card-width));
+  height: calc(
+    var(--card-height) * 3 + var(--card-padding) * 4 + var(--card-gaps) * 2
+  );
 }
 
 .card-big {
-  width: 360px;
-  height: 200px;
-  
+  width: calc(
+    var(--card-width) * 2 + var(--card-padding) * 2 + var(--card-gaps)
+  );
+  height: calc(
+    var(--card-height) * 3 + var(--card-padding) * 4 + var(--card-gaps) * 2
+  );
 }
 
 .card-title {
   padding-bottom: 10px;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
