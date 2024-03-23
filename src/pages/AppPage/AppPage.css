@@ -34,7 +34,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: var(--card-gaps);
 }
 
 .cards-container-1 {
@@ -44,7 +44,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  gap: 10px;
+  gap: var(--card-gaps);
 }
 
 .cards-container-2 {
@@ -54,5 +54,5 @@
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  gap: 10px;
+  gap: var(--card-gaps);
 }
