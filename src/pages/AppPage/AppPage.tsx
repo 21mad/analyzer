@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./AppPage.css";
 import { getIcon } from "../../utils/utils.tsx";
 import { Card } from "../../components/common/Card/Card.tsx";
+import { useEffect } from "react";
+import api, { API } from "../../services/api.ts";
+// import todoistApi from "../../services/api.ts";
 
 export function AppPage() {
   const navigate = useNavigate();
@@ -17,6 +20,22 @@ export function AppPage() {
         }}
       />
     ));
+
+  // useEffect(() => {
+  //   console.log(
+  //     "test",
+  //     API.getTasks()
+  //       .then((res) => {
+  //         res.forEach((doc) => {
+  //           console.log(`doc: ${doc.id} => ${doc.data()}`);
+  //           console.log(doc.data());
+  //         });
+  //       })
+  //       .catch((err) => console.log(err))
+  //   );
+  //   console.log("test");
+  // }, []);
+
   return (
     <div className="app-page">
       <AppBar />
