@@ -1,9 +1,21 @@
-import { TodoistApi } from "@doist/todoist-api-typescript";
+import { Task, TodoistApi } from "@doist/todoist-api-typescript";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  setDoc,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
+
+const API_KEY = import.meta.env.FIREBASE_API_KEY;
+const TODOIST_API_KEY = import.meta.env.VITE_TODOIST_API_KEY;
+
+export const todoistApi = new TodoistApi(TODOIST_API_KEY);
 
 const firebaseConfig = {
-  apiKey: import.meta.env.FIREBASE_API_KEY,
+  apiKey: API_KEY,
   authDomain: "p-m-system-l0k5i2.firebaseapp.com",
   projectId: "p-m-system-l0k5i2",
   storageBucket: "p-m-system-l0k5i2.appspot.com",
@@ -15,11 +27,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export const todoistApi = new TodoistApi(import.meta.env.TODOIST_API_KEY);
+const tasksRef = collection(db, "tasks");
 
 export const API = {
-  getTasks: async () => {
-    const tasks = await getDocs(collection(db, "tasks"));
+  getTasks: async (): Promise<Task[]> => {
+    const tasks = (await getDocs(tasksRef)).docs.map((doc) => {
+      const data = doc.data() as Task;
+      const transformed = Object.fromEntries(
+        Object.entries(data).sort((a, b) => a[0].localeCompare(b[0]))
+      );
+      return { id: doc.id, ...transformed };
+    }) as Task[];
     return tasks;
-  }
-}
+  },
+
+  addTask: async (task: Task) => {
+    const taskRef = doc(db, "tasks", task.id);
+    const result = setDoc(taskRef, task);
+    return result;
+  },
+  updateTask: async (taskId: string, task: Task): Promise<any> => {
+    const taskRef = doc(db, "tasks", taskId);
+    const result = await setDoc(taskRef, task);
+    return result;
+  },
+  clearTasks: async () => {
+    const docs = await getDocs(tasksRef);
+    docs.forEach((doc) => {
+      deleteDoc(doc.ref);
+    });
+  },
+};

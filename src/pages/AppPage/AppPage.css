@@ -5,13 +5,44 @@
   flex-direction: column;
 }
 
-.top-bar {
+.row {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.top-bar {
   justify-content: space-between;
   padding: 10px;
   height: 50px;
+}
+
+.pages {
+  gap: 4px;
+}
+
+.page-link {
+  text-transform: initial !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  color: black !important;
+}
+
+.actions {
+  gap: 4px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.spin-animation {
+  animation: spin 2s linear infinite; /* Продолжительность, тип функции сглаживания, повторение */
 }
 
 .app {
@@ -28,12 +59,19 @@
   cursor: pointer;
 }
 
+/* Cards */
 .cards {
+  --card-width: 280px;
+  /* --card-width: 200px; */
+  /* --card-height: 80px; */
+  --card-height: calc(var(--card-width) * 0.4);
+  --card-padding: 16px;
+  --card-gaps: 16px;
+
   max-width: calc(var(--card-width) * 4 + var(--card-padding)*8 + var(--card-gaps)*3);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
   gap: var(--card-gaps);
 }
 

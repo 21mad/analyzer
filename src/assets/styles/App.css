@@ -1,11 +1,4 @@
-#root {
-  --card-width: 280px;
-  /* --card-width: 200px; */
-  /* --card-height: 80px; */
-  --card-height: calc(var(--card-width) * 0.4);
-  --card-padding: 16px;
-  --card-gaps: 16px;
-  
+#root {  
   width: 100%;
   height: 100%;
   display: flex;

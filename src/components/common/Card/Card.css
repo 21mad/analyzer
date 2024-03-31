@@ -21,7 +21,7 @@
   );
 }
 
-.card-big {
+.card-large {
   width: calc(
     var(--card-width) * 2 + var(--card-padding) * 2 + var(--card-gaps)
   );
